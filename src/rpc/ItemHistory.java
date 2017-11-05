@@ -54,6 +54,7 @@ public class ItemHistory extends HttpServlet {
 				array.put(obj);
 			}
 			RpcHelper.writeJsonArray(response, array);
+			conn.close();
 		}
 
 
@@ -83,6 +84,7 @@ public class ItemHistory extends HttpServlet {
 
 			// Return save result to client
 			RpcHelper.writeJsonObject(response, new JSONObject().put("result", "SUCCESS"));
+			conn.close();
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

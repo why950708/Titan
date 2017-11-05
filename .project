@@ -3,6 +3,8 @@
 	<name>Titan</name>
 	<comment></comment>
 	<projects>
+		<project>java-json</project>
+		<project>mysql-connector-java-5.1.44-bin</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

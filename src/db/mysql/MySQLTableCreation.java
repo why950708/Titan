@@ -6,13 +6,13 @@ import java.sql.Connection;
 
 public class MySQLTableCreation {
 	// Run this as Java application to reset db schema.
+		@SuppressWarnings("deprecation")
 		public static void main(String[] args) {
 			try {
 				// Ensure the driver is imported.
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				// This is java.sql.Connection. Not com.mysql.jdbc.Connection.
 				Connection conn = null;
-
 				// Step 1 Connect to MySQL.
 				try {
 					System.out.println("Connecting to \n" + MySQLDBUtil.URL);
@@ -72,13 +72,11 @@ public class MySQLTableCreation {
 
 				System.out.println("Executing query:\n" + sql);
 				stmt.executeUpdate(sql);
-
 				
-				
-
+				conn.close();
 				System.out.println("Import is done successfully.");
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.println("error " + e.getMessage());
 			}
 		}
 
